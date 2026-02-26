@@ -241,6 +241,51 @@
             document.querySelectorAll('.animate-left, .animate-right').forEach(el => observer.observe(el));
         });
     </script>
+    <a href="#" class="back-to-top" id="backToTop">
+        <svg class="progress-ring" width="50" height="50">
+            <circle class="progress-ring__circle" stroke-width="3" fill="transparent" r="22" cx="25" cy="25" />
+        </svg>
+        <i class="fa-solid fa-chevron-up"></i>
+    </a>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTopButton = document.getElementById("backToTop");
+            if (backToTopButton) {
+                const circle = backToTopButton.querySelector(".progress-ring__circle");
+                const radius = circle.r.baseVal.value;
+                const circumference = radius * 2 * Math.PI;
+
+                circle.style.strokeDasharray = `${circumference} ${circumference}`;
+                circle.style.strokeDashoffset = `${circumference}`;
+
+                function setProgress(percent) {
+                    const offset = circumference - (percent / 100) * circumference;
+                    circle.style.strokeDashoffset = offset;
+                }
+
+                window.addEventListener("scroll", () => {
+                    const scrollY = window.scrollY;
+                    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                    let scrollPercent = 0;
+                    if (docHeight > 0) {
+                        scrollPercent = (scrollY / docHeight) * 100;
+                    }
+                    setProgress(scrollPercent);
+
+                    if (scrollY > 300) {
+                        backToTopButton.classList.add("show");
+                    } else {
+                        backToTopButton.classList.remove("show");
+                    }
+                });
+
+                backToTopButton.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
