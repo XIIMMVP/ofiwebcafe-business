@@ -3,3 +3,5 @@ directivas/
 scripts/
 .tmp/
 .DS_Store
+
+node_modules/
