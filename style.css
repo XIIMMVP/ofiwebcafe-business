@@ -527,6 +527,48 @@ footer {
   }
 }
 
+/* Lista de Servicios Alternada */
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.services-list .service-card {
+  width: 75%;
+}
+
+.services-list .service-card.left {
+  align-self: flex-start;
+  text-align: left;
+}
+
+.services-list .service-card.left .service-icon {
+  margin: 0 0 1.5rem 0;
+}
+
+.services-list .service-card.right {
+  align-self: flex-end;
+  text-align: right;
+}
+
+.services-list .service-card.right .service-icon {
+  margin: 0 0 1.5rem auto;
+}
+
+@media (max-width: 768px) {
+  .services-list .service-card {
+    width: 100%;
+    text-align: center !important;
+  }
+
+  .services-list .service-card .service-icon {
+    margin: 0 auto 1.5rem auto !important;
+  }
+}
+
 /* Animaciones de Entrada (Scroll) */
 .animate-left {
   opacity: 0;
