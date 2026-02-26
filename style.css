@@ -528,40 +528,56 @@ footer {
 }
 
 /* Lista de Servicios Alternada */
+/* Lista de Servicios Alternada */
 .services-list {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  max-width: 850px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
 .services-list .service-card {
-  width: 75%;
+  width: 85%;
 }
 
 .services-list .service-card.left {
   align-self: flex-start;
-  text-align: left;
 }
 
-.services-list .service-card.left .service-icon {
-  margin: 0 0 1.5rem 0;
+.services-list .service-card.left .service-content-wrapper {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .services-list .service-card.right {
   align-self: flex-end;
+}
+
+.services-list .service-card.right .service-content-wrapper {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  flex-direction: row-reverse;
   text-align: right;
 }
 
-.services-list .service-card.right .service-icon {
-  margin: 0 0 1.5rem auto;
+.services-list .service-icon {
+  margin: 0 !important;
+  flex-shrink: 0;
 }
 
 @media (max-width: 768px) {
   .services-list .service-card {
     width: 100%;
+  }
+
+  .services-list .service-card .service-content-wrapper {
+    flex-direction: column !important;
     text-align: center !important;
+    align-items: center !important;
   }
 
   .services-list .service-card .service-icon {
