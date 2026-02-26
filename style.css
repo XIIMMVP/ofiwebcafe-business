@@ -526,3 +526,22 @@ footer {
     display: none;
   }
 }
+
+/* Animaciones de Entrada (Scroll) */
+.animate-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.animate-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.animate-left.in-view,
+.animate-right.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
