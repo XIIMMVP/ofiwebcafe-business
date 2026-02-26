@@ -93,7 +93,8 @@ header {
   transition: color 0.3s ease;
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover,
+.nav-links a.active {
   color: var(--primary);
 }
 
@@ -158,7 +159,8 @@ footer {
   color: var(--white);
 }
 
-.footer-col p, .footer-col a {
+.footer-col p,
+.footer-col a {
   color: #9cd3f0;
   margin-bottom: 1rem;
   display: block;
@@ -199,8 +201,15 @@ footer {
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate {
@@ -216,9 +225,17 @@ footer {
   text-align: center;
 }
 
-.mb-4 { margin-bottom: 1rem; }
-.mb-8 { margin-bottom: 2rem; }
-.mt-8 { margin-top: 2rem; }
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
 
 /* Home specifically */
 .hero {
@@ -329,26 +346,57 @@ footer {
   padding: 4rem 0;
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  /* Fade en los bordes para estilo premium */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+  padding: 1rem 0;
+}
+
+.marquee-content {
+  display: flex;
+  width: max-content;
+  /* Cambia '25s' para ajustar la velocidad */
+  animation: marquee-scroll 25s linear infinite;
+}
+
+.marquee-content:hover {
+  animation-play-state: paused;
 }
 
 .social-icons-row {
   display: flex;
   justify-content: center;
-  gap: 3rem;
-  flex-wrap: wrap;
   align-items: center;
+  gap: 4rem;
+  padding-right: 4rem;
+  /* Debe ser igual al gap para no salto visual en el bucle */
 }
 
 .social-icons-row i {
   font-size: 2.5rem;
-  color: #9ca3af;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
   cursor: pointer;
 }
 
 .social-icons-row i:hover {
-  color: var(--primary);
-  transform: scale(1.1);
+  transform: scale(1.15) translateY(-5px);
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-33.333333%);
+  }
 }
 
 .page-header {
@@ -437,7 +485,7 @@ footer {
   background: white;
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
 }
 
 .info-icon {
@@ -454,9 +502,18 @@ footer {
 
 /* responsive */
 @media (max-width: 991px) {
-  .hero-grid, .contact-layout, .footer-grid {
+
+  .hero-grid,
+  .contact-layout,
+  .footer-grid {
     grid-template-columns: 1fr;
   }
-  .hero h1 { font-size: 3rem; }
-  .nav-links { display: none; }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
 }
