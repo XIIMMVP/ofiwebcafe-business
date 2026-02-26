@@ -379,14 +379,23 @@ footer {
   /* Debe ser igual al gap para no salto visual en el bucle */
 }
 
-.social-icons-row i {
-  font-size: 2.5rem;
-  transition: transform 0.3s ease;
+.social-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--dark);
   cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.social-icons-row i:hover {
-  transform: scale(1.15) translateY(-5px);
+.social-brand:hover {
+  transform: scale(1.05) translateY(-3px);
+}
+
+.social-brand i {
+  font-size: 2.5rem;
 }
 
 @keyframes marquee-scroll {
