@@ -1,0 +1,5 @@
+.agent/
+directivas/
+scripts/
+.tmp/
+.DS_Store
