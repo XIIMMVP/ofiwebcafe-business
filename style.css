@@ -385,6 +385,17 @@ footer {
 
 .social-links a:hover {
   background-color: var(--primary);
+  transform: translateY(-3px);
+}
+
+.social-links a.social-insta {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  color: white;
+}
+
+.social-links a.social-insta:hover {
+  filter: brightness(1.1);
+  transform: translateY(-3px);
 }
 
 .footer-bottom {
@@ -752,9 +763,10 @@ html {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  width: 50px;
-  height: 50px;
-  background-color: rgba(255, 255, 255, 0.1);
+  width: 54px;
+  height: 54px;
+  background-color: var(--dark);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -762,8 +774,8 @@ html {
   color: white;
   text-decoration: none;
   font-size: 1.2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   z-index: 1000;
   opacity: 0;
   visibility: hidden;
