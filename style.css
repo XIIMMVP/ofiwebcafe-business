@@ -87,8 +87,8 @@ header {
 }
 
 .logo-text {
-  color: #fbc143;
-  /* Amarillo del logo para "Ofiweb" */
+  color: var(--dark);
+  /* Negro para "Ofiweb" en el Header */
 }
 
 .logo-text .color-cafe {
@@ -99,6 +99,19 @@ header {
 .logo-text .color-business {
   color: var(--primary);
   /* Azul para "Business" */
+}
+
+/* Estilos específicos para el Footer para que sea blanco */
+footer .logo-text {
+  color: white !important;
+}
+
+footer .logo-text .color-cafe {
+  color: white !important;
+}
+
+footer .logo-text .color-business {
+  color: var(--primary) !important;
 }
 
 .nav-links {
