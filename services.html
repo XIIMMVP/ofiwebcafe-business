@@ -28,6 +28,16 @@
                 <a href="services.html" class="active">Servicios</a>
                 <a href="about.html">Nosotros</a>
                 <a href="contact.html">Contacto</a>
+                <div class="mobile-menu-socials">
+                    <a href="https://wa.me/584129479152" target="_blank" class="social-whatsapp"
+                        aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="mailto:ofi.web.cafe512@gmail.com" class="social-email" aria-label="Correo"><i
+                            class="fa-solid fa-envelope"></i></a>
+                    <a href="https://www.instagram.com/ofi.webcafebusiness/" target="_blank" class="social-instagram"
+                        aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <a href="https://wa.me/584129479152" target="_blank" class="btn btn-secondary mobile-menu-cta"><i
+                        class="fa-brands fa-whatsapp"></i> Escríbenos por WhatsApp</a>
             </nav>
             <div class="menu-toggle" id="mobile-menu-btn">
                 <i class="fa-solid fa-bars"></i>
@@ -270,23 +280,35 @@
                 // Mobile Menu Logic
                 const mobileMenuBtn = document.getElementById("mobile-menu-btn");
                 const navLinks = document.getElementById("nav-links");
+                let scrollPos = 0;
+
+                function openMenu() {
+                    scrollPos = window.scrollY;
+                    navLinks.classList.add("mobile-active");
+                    document.body.classList.add("menu-open");
+                    document.body.style.top = `-${scrollPos}px`;
+                    mobileMenuBtn.querySelector("i").classList.replace("fa-bars", "fa-xmark");
+                }
+
+                function closeMenu() {
+                    navLinks.classList.remove("mobile-active");
+                    document.body.classList.remove("menu-open");
+                    document.body.style.top = '';
+                    window.scrollTo(0, scrollPos);
+                    mobileMenuBtn.querySelector("i").classList.replace("fa-xmark", "fa-bars");
+                }
 
                 if (mobileMenuBtn && navLinks) {
                     mobileMenuBtn.addEventListener("click", () => {
-                        navLinks.classList.toggle("mobile-active");
-                        const icon = mobileMenuBtn.querySelector("i");
                         if (navLinks.classList.contains("mobile-active")) {
-                            icon.classList.replace("fa-bars", "fa-xmark");
+                            closeMenu();
                         } else {
-                            icon.classList.replace("fa-xmark", "fa-bars");
+                            openMenu();
                         }
                     });
 
-                    navLinks.querySelectorAll("a").forEach(link => {
-                        link.addEventListener("click", () => {
-                            navLinks.classList.remove("mobile-active");
-                            mobileMenuBtn.querySelector("i").classList.replace("fa-xmark", "fa-bars");
-                        });
+                    navLinks.querySelectorAll("a:not(.mobile-menu-cta):not(.mobile-menu-socials a)").forEach(link => {
+                        link.addEventListener("click", () => closeMenu());
                     });
                 }
 
