@@ -91,18 +91,17 @@
             <div class="text-center mb-8 animate">
                 <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--dark);">Nuestros Clientes Dicen</h2>
                 <div class="google-rating"
-                    style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 0.5rem;">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_Logo.svg" alt="Google"
-                        style="height: 20px;">
-                    <span style="font-weight: 700; font-size: 1.2rem; color: #4b5563;">5.0</span>
-                    <div class="stars" style="color: #fbbc04;">
+                    style="display: flex; align-items: center; justify-content: center; gap: 0.8rem; margin-top: 0.5rem;">
+                    <i class="fa-brands fa-google" style="font-size: 1.5rem; color: #4285F4;"></i>
+                    <span style="font-weight: 700; font-size: 1.4rem; color: var(--dark);">5.0</span>
+                    <div class="stars" style="color: #fbbc04; font-size: 1.1rem;">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                     </div>
-                    <span style="color: #6b7280; font-size: 0.95rem;">(Google Maps)</span>
+                    <span style="color: #6b7280; font-size: 1rem;">(Google Maps)</span>
                 </div>
             </div>
 
@@ -115,8 +114,8 @@
                             <h4>Maria Guerra</h4>
                             <div class="review-meta">3 reseñas • Hace 9 meses</div>
                         </div>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_Logo.svg" alt="G"
-                            style="height: 16px; margin-left: auto; opacity: 0.6;">
+                        <i class="fa-brands fa-google"
+                            style="color: #4285F4; font-size: 0.9rem; margin-left: auto;"></i>
                     </div>
                     <div class="stars" style="color: #fbbc04; font-size: 14px; margin: 10px 0;">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
@@ -135,8 +134,8 @@
                             <h4>Abril Barriosalfonzo</h4>
                             <div class="review-meta">Nueva • Hace 3 semanas</div>
                         </div>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_Logo.svg" alt="G"
-                            style="height: 16px; margin-left: auto; opacity: 0.6;">
+                        <i class="fa-brands fa-google"
+                            style="color: #4285F4; font-size: 0.9rem; margin-left: auto;"></i>
                     </div>
                     <div class="stars" style="color: #fbbc04; font-size: 14px; margin: 10px 0;">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
@@ -155,8 +154,8 @@
                             <h4>Francisco Cano</h4>
                             <div class="review-meta">Local Guide • 20 reseñas</div>
                         </div>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_Logo.svg" alt="G"
-                            style="height: 16px; margin-left: auto; opacity: 0.6;">
+                        <i class="fa-brands fa-google"
+                            style="color: #4285F4; font-size: 0.9rem; margin-left: auto;"></i>
                     </div>
                     <div class="stars" style="color: #fbbc04; font-size: 14px; margin: 10px 0;">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
@@ -171,8 +170,7 @@
             <div class="text-center mt-8 animate">
                 <a href="https://www.google.com/maps/search/?api=1&query=Ofiwebcafe+c.a.+Lecheria" target="_blank"
                     class="btn btn-outline" style="border-radius: 999px; padding: 0.8rem 2rem;">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_Logo.svg" alt="Google"
-                        style="height: 16px; margin-right: 8px; vertical-align: middle;">
+                    <i class="fa-brands fa-google" style="margin-right: 10px; color: #4285F4;"></i>
                     Ver todas en Google Maps
                 </a>
             </div>
@@ -262,6 +260,23 @@
                     window.scrollTo({ top: 0, behavior: "smooth" });
                 });
             }
+
+            // Intersection Observer para Animaciones
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.animate, .animate-left, .animate-right').forEach(el => {
+                observer.observe(el);
+            });
         });
     </script>
 </body>
