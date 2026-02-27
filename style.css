@@ -610,23 +610,69 @@ html {
   }
 }
 
-/* responsive */
+/* ===== RESPONSIVE: TABLETS (max-width: 991px) ===== */
 @media (max-width: 991px) {
 
+  /* Grid layouts → single column */
   .hero-grid,
   .contact-layout,
   .footer-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    gap: 2rem;
+  }
+
+  /* Hero section */
+  .hero {
+    padding: 5rem 0 3rem;
   }
 
   .hero h1 {
     font-size: 2.5rem !important;
+    text-align: center;
+  }
+
+  .hero p {
+    text-align: center;
+    margin: 0 auto 2rem;
+  }
+
+  .hero-content {
+    text-align: center;
+    order: 1;
+  }
+
+  .hero-image-wrapper {
+    order: 0;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  /* Hero buttons stack */
+  .hero-content>div[style*="display: flex"] {
+    flex-direction: column !important;
+    align-items: center;
+    gap: 0.75rem !important;
+  }
+
+  /* Page headers */
+  .page-header {
+    padding: 4rem 0 3rem !important;
   }
 
   .page-header h1 {
-    font-size: 2.22rem !important;
+    font-size: 2.2rem !important;
   }
 
+  .page-header p {
+    font-size: 1.05rem !important;
+  }
+
+  /* Services grid → 1 column on mobile */
+  .services-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Navigation */
   .nav-links {
     display: none;
   }
@@ -643,7 +689,7 @@ html {
     z-index: 1001;
   }
 
-  /* Mobile Navigation Menu */
+  /* Mobile Navigation Full Screen */
   .nav-links.mobile-active {
     display: flex;
     position: fixed;
@@ -654,18 +700,70 @@ html {
     background: white;
     flex-direction: column;
     align-items: center;
-    padding: 2rem;
+    justify-content: flex-start;
+    padding: 3rem 2rem;
     gap: 2rem;
     z-index: 1000;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   }
 
   .nav-links.mobile-active a {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
+  /* Footer */
+  .footer-grid {
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  footer .logo {
+    justify-content: center;
+  }
+
+  /* Section spacing */
+  .section {
+    padding: 4rem 0;
+  }
+
+  /* Contact page adjustments */
+  .contact-info-card {
+    padding: 2rem !important;
+  }
+
+  /* Reviews */
+  .reviews-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Marquee */
+  .social-icons-row {
+    gap: 2rem;
+    padding-right: 2rem;
+  }
+
+  .social-brand i {
+    font-size: 1.8rem;
+  }
+
+  .social-brand {
+    font-size: 1rem;
+  }
+
+  .social-banner {
+    padding: 2.5rem 0;
   }
 }
 
+/* ===== RESPONSIVE: SMALL PHONES (max-width: 480px) ===== */
 @media (max-width: 480px) {
+
+  /* Logo */
   .logo-text {
     font-size: 1rem;
     white-space: nowrap;
@@ -682,38 +780,46 @@ html {
     margin-right: 5px;
   }
 
+  /* Hero */
+  .hero {
+    padding: 3.5rem 0 2rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem !important;
+  }
+
   .hero p {
-    font-size: 1.1rem;
-  }
-
-  .section {
-    padding: 3.5rem 0;
-  }
-
-  .footer-grid {
-    text-align: center;
-  }
-
-  .social-links {
-    justify-content: center;
-  }
-
-  /* Marquee Mobile Adjustments */
-  .social-icons-row {
-    gap: 2rem;
-    padding-right: 2rem;
-  }
-
-  .social-brand i {
-    font-size: 1.8rem;
-  }
-
-  .social-brand {
     font-size: 1rem;
   }
 
-  .social-banner {
-    padding: 2.5rem 0;
+  /* Page Header */
+  .page-header {
+    padding: 3rem 0 2.5rem !important;
+  }
+
+  .page-header h1 {
+    font-size: 1.8rem !important;
+  }
+
+  /* Sections */
+  .section {
+    padding: 3rem 0;
+  }
+
+  /* Container */
+  .container {
+    padding: 0 1rem;
+  }
+
+  /* Reviews section title */
+  .reviews-section h2 {
+    font-size: 1.8rem !important;
+  }
+
+  .google-rating {
+    flex-wrap: wrap;
+    gap: 0.4rem !important;
   }
 }
 
