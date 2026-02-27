@@ -337,9 +337,10 @@ footer .logo-text .color-business {
 
 /* Footer */
 footer {
-  background-color: var(--dark);
-  color: white;
+  background-color: var(--white);
+  color: var(--dark);
   padding: 4rem 0 2rem;
+  border-top: 1px solid var(--border-color);
 }
 
 .footer-grid {
@@ -352,18 +353,18 @@ footer {
 .footer-col h3 {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
-  color: var(--white);
+  color: var(--dark);
 }
 
 .footer-col p,
 .footer-col a {
-  color: #9cd3f0;
+  color: var(--slate);
   margin-bottom: 1rem;
   display: block;
 }
 
 .footer-col a:hover {
-  color: var(--white);
+  color: var(--primary);
 }
 
 .social-links {
@@ -375,11 +376,11 @@ footer {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--light);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--dark);
   transition: background-color 0.3s ease;
 }
 
@@ -390,7 +391,7 @@ footer {
 .footer-bottom {
   text-align: center;
   padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--border-color);
   color: #6b7280;
   font-size: 0.875rem;
 }
