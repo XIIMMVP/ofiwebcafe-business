@@ -17,8 +17,12 @@
   font-family: 'Inter', sans-serif;
 }
 
+html {
+  background-color: var(--dark);
+}
+
 body {
-  background-color: var(--light);
+  background-color: var(--white);
   color: var(--slate);
   line-height: 1.6;
 }
@@ -337,10 +341,9 @@ footer .logo-text .color-business {
 
 /* Footer */
 footer {
-  background-color: var(--white);
-  color: var(--dark);
+  background-color: var(--dark);
+  color: white;
   padding: 4rem 0 2rem;
-  border-top: 1px solid var(--border-color);
 }
 
 .footer-grid {
@@ -353,18 +356,18 @@ footer {
 .footer-col h3 {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
-  color: var(--dark);
+  color: var(--white);
 }
 
 .footer-col p,
 .footer-col a {
-  color: var(--slate);
+  color: #9cd3f0;
   margin-bottom: 1rem;
   display: block;
 }
 
 .footer-col a:hover {
-  color: var(--primary);
+  color: var(--white);
 }
 
 .social-links {
@@ -391,7 +394,7 @@ footer {
 .footer-bottom {
   text-align: center;
   padding-top: 2rem;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   color: #6b7280;
   font-size: 0.875rem;
 }
@@ -755,12 +758,12 @@ html {
   right: 2rem;
   width: 50px;
   height: 50px;
-  background-color: var(--white);
+  background-color: var(--primary);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--primary);
+  color: white;
   text-decoration: none;
   font-size: 1.2rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
