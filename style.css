@@ -481,6 +481,44 @@ footer {
   margin: 0 auto;
 }
 
+/* Contact page specific */
+.contact-header {
+  padding: 6rem 0 7rem;
+}
+
+.contact-card-wrapper {
+  margin-top: -4rem;
+  position: relative;
+  z-index: 10;
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 991px) {
+  .contact-header {
+    padding: 4rem 0 5rem;
+  }
+
+  .contact-card-wrapper {
+    margin-top: -2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-header {
+    padding: 3.5rem 0 4rem;
+  }
+
+  .contact-header h1 {
+    font-size: 2rem !important;
+  }
+
+  .contact-card-wrapper {
+    margin-top: -1.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
 /* Contact layout */
 .contact-layout {
   display: grid;
