@@ -88,11 +88,17 @@ header {
 
 .logo-text {
   color: #fbc143;
-  /* Amarillo del logo */
+  /* Amarillo del logo para "Ofiweb" */
 }
 
-.logo-text span {
-  color: white;
+.logo-text .color-cafe {
+  color: var(--dark);
+  /* Negro para "Café" */
+}
+
+.logo-text .color-business {
+  color: var(--primary);
+  /* Azul para "Business" */
 }
 
 .nav-links {
