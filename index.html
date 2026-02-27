@@ -25,14 +25,18 @@
     <div class="container nav-container">
       <a href="index.html" class="logo">
         <div class="logo-icon"><img src="images/logo_brand.jpg" alt="Ofiwebcafe Logo"></div>
-        <div class="logo-text">Ofiweb<span class="color-cafe">Café</span> <span class="color-business">Business</span></div>
+        <div class="logo-text">Ofiweb<span class="color-cafe">Café</span> <span class="color-business">Business</span>
+        </div>
       </a>
-      <nav class="nav-links">
+      <nav class="nav-links" id="nav-links">
         <a href="index.html" class="active">Inicio</a>
         <a href="services.html">Servicios</a>
         <a href="about.html">Nosotros</a>
         <a href="contact.html">Contacto</a>
       </nav>
+      <div class="menu-toggle" id="mobile-menu-btn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
       <a href="https://wa.me/584129479152" target="_blank" class="btn">
         <i class="fa-brands fa-whatsapp"></i> Escríbenos
       </a>
@@ -206,7 +210,8 @@
         <div class="footer-col">
           <div class="logo mb-4">
             <div class="logo-icon"><img src="images/logo_brand.jpg" alt="Ofiwebcafe Logo"></div>
-            <div class="logo-text" style="">Ofiweb<span class="color-cafe">Café</span> <span class="color-business">Business</span></div>
+            <div class="logo-text" style="">Ofiweb<span class="color-cafe">Café</span> <span
+                class="color-business">Business</span></div>
           </div>
           <p style="font-size: 0.95rem; color: #9ca3af; line-height: 1.6;">Tu aliado estratégico en impresiones,
             papelería y conectividad corporativa. Soluciones integrales rápidas y calidad profesional para potenciar tu
@@ -262,6 +267,30 @@
         function setProgress(percent) {
           const offset = circumference - (percent / 100) * circumference;
           circle.style.strokeDashoffset = offset;
+        }
+
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+        const navLinks = document.getElementById("nav-links");
+
+        if (mobileMenuBtn && navLinks) {
+          mobileMenuBtn.addEventListener("click", () => {
+            navLinks.classList.toggle("mobile-active");
+            const icon = mobileMenuBtn.querySelector("i");
+            if (navLinks.classList.contains("mobile-active")) {
+              icon.classList.replace("fa-bars", "fa-xmark");
+            } else {
+              icon.classList.replace("fa-xmark", "fa-bars");
+            }
+          });
+
+          // Close menu when a link is clicked
+          navLinks.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+              navLinks.classList.remove("mobile-active");
+              mobileMenuBtn.querySelector("i").classList.replace("fa-xmark", "fa-bars");
+            });
+          });
         }
 
         window.addEventListener("scroll", () => {

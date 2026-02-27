@@ -57,6 +57,10 @@ header {
   height: 80px;
 }
 
+.menu-toggle {
+  display: none;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -616,11 +620,100 @@ html {
   }
 
   .hero h1 {
-    font-size: 3rem;
+    font-size: 2.5rem !important;
+  }
+
+  .page-header h1 {
+    font-size: 2.22rem !important;
   }
 
   .nav-links {
     display: none;
+  }
+
+  .nav-container .btn {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+    font-size: 1.5rem;
+    color: var(--dark);
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  /* Mobile Navigation Menu */
+  .nav-links.mobile-active {
+    display: flex;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: white;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+    z-index: 1000;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.mobile-active a {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-text {
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  .nav-container {
+    height: 70px;
+    padding: 0 1rem;
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 5px;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .section {
+    padding: 3.5rem 0;
+  }
+
+  .footer-grid {
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  /* Marquee Mobile Adjustments */
+  .social-icons-row {
+    gap: 2rem;
+    padding-right: 2rem;
+  }
+
+  .social-brand i {
+    font-size: 1.8rem;
+  }
+
+  .social-brand {
+    font-size: 1rem;
+  }
+
+  .social-banner {
+    padding: 2.5rem 0;
   }
 }
 

@@ -22,12 +22,15 @@
                 <div class="logo-text">Ofiweb<span class="color-cafe">Café</span> <span
                         class="color-business">Business</span></div>
             </a>
-            <nav class="nav-links">
+            <nav class="nav-links" id="nav-links">
                 <a href="index.html">Inicio</a>
                 <a href="services.html">Servicios</a>
                 <a href="about.html" class="active">Nosotros</a>
                 <a href="contact.html">Contacto</a>
             </nav>
+            <div class="menu-toggle" id="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
             <a href="https://wa.me/584129479152" target="_blank" class="btn">
                 <i class="fa-brands fa-whatsapp"></i> Escríbenos
             </a>
@@ -237,6 +240,29 @@
                 function setProgress(percent) {
                     const offset = circumference - (percent / 100) * circumference;
                     circle.style.strokeDashoffset = offset;
+                }
+
+                // Mobile Menu Logic
+                const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+                const navLinks = document.getElementById("nav-links");
+
+                if (mobileMenuBtn && navLinks) {
+                    mobileMenuBtn.addEventListener("click", () => {
+                        navLinks.classList.toggle("mobile-active");
+                        const icon = mobileMenuBtn.querySelector("i");
+                        if (navLinks.classList.contains("mobile-active")) {
+                            icon.classList.replace("fa-bars", "fa-xmark");
+                        } else {
+                            icon.classList.replace("fa-xmark", "fa-bars");
+                        }
+                    });
+
+                    navLinks.querySelectorAll("a").forEach(link => {
+                        link.addEventListener("click", () => {
+                            navLinks.classList.remove("mobile-active");
+                            mobileMenuBtn.querySelector("i").classList.replace("fa-xmark", "fa-bars");
+                        });
+                    });
                 }
 
                 window.addEventListener("scroll", () => {
