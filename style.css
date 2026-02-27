@@ -86,8 +86,13 @@ header {
   /* Escalar un poco para ocultar bordes imperfectos de la imagen original */
 }
 
+.logo-text {
+  color: #fbc143;
+  /* Amarillo del logo */
+}
+
 .logo-text span {
-  color: var(--primary);
+  color: white;
 }
 
 .nav-links {
