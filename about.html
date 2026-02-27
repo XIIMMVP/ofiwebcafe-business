@@ -73,11 +73,11 @@
 
     <section class="section" style="background-color: white;">
         <div class="container">
-            <div class="text-center mb-8">
+            <div class="text-center mb-8 reveal">
                 <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--dark);">¿Por qué Elegirnos?</h2>
             </div>
 
-            <div class="services-grid mt-8">
+            <div class="services-grid mt-8 reveal reveal-stagger">
                 <div class="service-card" style="border: none; background: var(--light);">
                     <div class="service-icon"><i class="fa-solid fa-bolt"></i></div>
                     <h3>Velocidad en el trámite</h3>
@@ -104,7 +104,7 @@
     <section class="reviews-section section"
         style="background-color: #f8fafc; border-top: 1px solid var(--border-color);">
         <div class="container">
-            <div class="text-center mb-8 animate">
+            <div class="text-center mb-8 reveal">
                 <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--dark);">Nuestros Clientes Dicen</h2>
                 <div class="google-rating"
                     style="display: flex; align-items: center; justify-content: center; gap: 0.8rem; margin-top: 0.5rem;">
@@ -310,24 +310,17 @@
                     e.preventDefault();
                     window.scrollTo({ top: 0, behavior: "smooth" });
                 });
+                // Scroll Reveal Animations
+                const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+                revealElements.forEach(el => revealObserver.observe(el));
             }
-
-            // Intersection Observer para Animaciones
-            const observerOptions = {
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('in-view');
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.animate, .animate-left, .animate-right').forEach(el => {
-                observer.observe(el);
-            });
         });
     </script>
 </body>

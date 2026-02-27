@@ -64,12 +64,12 @@
 
     <section class="section pt-12">
         <div class="container">
-            <h2
+            <h2 class="reveal"
                 style="font-size: 2rem; border-left: 4px solid var(--primary); padding-left: 1rem; margin-bottom: 3rem;">
                 NUESTROS SERVICIOS</h2>
 
             <div class="services-list mb-8">
-                <div class="service-card animate-left left">
+                <div class="service-card reveal-left left">
                     <div class="service-content-wrapper">
                         <div class="service-icon"><i class="fa-solid fa-wifi"></i></div>
                         <div>
@@ -81,7 +81,7 @@
                     </div>
                 </div>
 
-                <div class="service-card animate-right right">
+                <div class="service-card reveal-right right">
                     <div class="service-content-wrapper">
                         <div class="service-icon icon-yellow"><i class="fa-solid fa-copy"></i></div>
                         <div>
@@ -93,7 +93,7 @@
                     </div>
                 </div>
 
-                <div class="service-card animate-left left">
+                <div class="service-card reveal-left left">
                     <div class="service-content-wrapper">
                         <div class="service-icon"><i class="fa-solid fa-print"></i></div>
                         <div>
@@ -105,7 +105,7 @@
                     </div>
                 </div>
 
-                <div class="service-card animate-right right">
+                <div class="service-card reveal-right right">
                     <div class="service-content-wrapper">
                         <div class="service-icon icon-yellow"><i class="fa-solid fa-fax"></i></div>
                         <div>
@@ -117,7 +117,7 @@
                     </div>
                 </div>
 
-                <div class="service-card animate-left left">
+                <div class="service-card reveal-left left">
                     <div class="service-content-wrapper">
                         <div class="service-icon"><i class="fa-solid fa-file-pdf"></i></div>
                         <div>
@@ -129,7 +129,7 @@
                     </div>
                 </div>
 
-                <div class="service-card animate-right right">
+                <div class="service-card reveal-right right">
                     <div class="service-content-wrapper">
                         <div class="service-icon icon-yellow"><i class="fa-solid fa-graduation-cap"></i></div>
                         <div>
@@ -141,7 +141,7 @@
                     </div>
                 </div>
 
-                <div class="service-card animate-left left">
+                <div class="service-card reveal-left left">
                     <div class="service-content-wrapper">
                         <div class="service-icon"><i class="fa-solid fa-box-open"></i></div>
                         <div>
@@ -153,7 +153,7 @@
                     </div>
                 </div>
 
-                <div class="service-card animate-right right">
+                <div class="service-card reveal-right right">
                     <div class="service-content-wrapper">
                         <div class="service-icon icon-yellow"><i class="fa-solid fa-address-card"></i></div>
                         <div>
@@ -165,7 +165,7 @@
                     </div>
                 </div>
 
-                <div class="service-card animate-left left">
+                <div class="service-card reveal-left left">
                     <div class="service-content-wrapper">
                         <div class="service-icon"><i class="fa-solid fa-book-open"></i></div>
                         <div>
@@ -247,15 +247,15 @@
     </footer>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const observer = new IntersectionObserver((entries) => {
+            const revealObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('in-view');
+                        entry.target.classList.add('visible');
                     }
                 });
-            }, { threshold: 0.1 });
+            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
-            document.querySelectorAll('.animate-left, .animate-right').forEach(el => observer.observe(el));
+            document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => revealObserver.observe(el));
         });
     </script>
     <a href="#" class="back-to-top" id="backToTop">

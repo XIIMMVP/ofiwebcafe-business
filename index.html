@@ -77,13 +77,13 @@
   <!-- Services Grid -->
   <section class="section">
     <div class="container">
-      <div class="text-center mb-8">
+      <div class="text-center mb-8 reveal">
         <h2 style="font-size: 2.5rem; color: var(--dark); font-weight: 800;">Nuestros Servicios</h2>
         <p style="color: var(--slate); font-size: 1.1rem; max-width: 600px; margin: 0 auto; margin-top: 1rem;">
           Equipamiento de vanguardia para garantizar los mejores resultados en tus trámites.</p>
       </div>
 
-      <div class="services-grid mt-8">
+      <div class="services-grid mt-8 reveal reveal-stagger">
         <!-- Servicio 1 -->
         <div class="service-card">
           <div class="service-icon"><i class="fa-solid fa-wifi"></i></div>
@@ -117,7 +117,7 @@
   </section>
 
   <!-- Social / Connectivity Banner -->
-  <section class="social-banner">
+  <section class="social-banner reveal">
     <div class="text-center">
       <h3 style="color: var(--dark); font-size: 1.25rem; font-weight: 600; margin-bottom: 2rem;">Conectividad total.
         Interactúa con las redes del momento:</h3>
@@ -336,6 +336,16 @@
           e.preventDefault();
           window.scrollTo({ top: 0, behavior: "smooth" });
         });
+        // Scroll Reveal Animations
+        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        revealElements.forEach(el => revealObserver.observe(el));
       }
     });
   </script>
