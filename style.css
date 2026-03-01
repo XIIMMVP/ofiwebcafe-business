@@ -672,22 +672,30 @@ footer {
   }
 
   .contact-card-wrapper {
-    margin-top: 0;
+    margin-top: 2rem !important;
+    /* Move it down from the blue header */
     margin-bottom: 3rem;
-    padding-top: 0;
   }
 
   .contact-info-card {
-    padding: 2.5rem 1.25rem !important;
-    margin-top: -1rem;
-    /* Slightly overlap but not over the h1 */
+    padding: 2rem 1rem !important;
+    margin-top: 0 !important;
+    /* Remove any negative overlap */
   }
 
   .contact-value {
-    font-size: 1rem !important;
+    font-size: 0.95rem !important;
+    /* Slightly smaller for the email */
     word-break: break-all;
+    /* Keep break-all but smaller font usually avoids the lone letter if possible */
     overflow-wrap: break-word;
     font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .info-item {
+    gap: 0.75rem !important;
+    padding: 1.25rem 1rem !important;
   }
 }
 
