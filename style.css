@@ -437,7 +437,7 @@ footer {
 
 /* Home specifically */
 .hero {
-  padding: 8rem 0;
+  padding: 4rem 0 8rem;
   background-color: var(--white);
   overflow: hidden;
   position: relative;
@@ -830,7 +830,7 @@ html {
 
   /* Hero section */
   .hero {
-    padding: 5rem 0 3rem;
+    padding: 2.5rem 0 3rem;
   }
 
   .hero h1 {
@@ -1083,7 +1083,7 @@ body.menu-open .back-to-top {
 
   /* Hero */
   .hero {
-    padding: 3.5rem 0 2rem;
+    padding: 1.5rem 0 2rem;
   }
 
   .hero h1 {
