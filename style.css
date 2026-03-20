@@ -700,8 +700,7 @@ footer {
 
 .cafe-gallery {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto auto;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
 }
 
@@ -808,13 +807,12 @@ footer {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 2.5rem;
   align-items: stretch;
-  justify-content: center;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1200px) {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1232,9 +1230,9 @@ html {
     font-size: 1.05rem !important;
   }
 
-  /* Services grid → 1 column on mobile */
+  /* Services grid → maintained at 2 columns for tablets */
   .services-grid {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 
   /* Navigation */
@@ -1414,6 +1412,13 @@ body.menu-open .back-to-top {
 
   .social-banner {
     padding: 2.5rem 0;
+  }
+
+  /* Services grid → 1 column on mobile */
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr !important;
+    }
   }
 }
 
