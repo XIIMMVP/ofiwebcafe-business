@@ -506,8 +506,8 @@ footer {
 }
 
 .google-icon-header {
-  height: 24px;
-  width: auto;
+  font-size: 1.5rem;
+  color: #4285f4;
 }
 
 .rating-value {
@@ -616,12 +616,31 @@ footer {
     font-size: 2rem;
   }
   
+  .testimonials-slider-container {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin: 0 calc(var(--container-padding, 1rem) * -1);
+    padding: 0 1rem;
+    -ms-overflow-style: none; /* Hide scrollbar IE/Edge */
+    scrollbar-width: none; /* Hide scrollbar Firefox */
+  }
+
+  .testimonials-slider-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar Chrome/Safari/Opera */
+  }
+
   .testimonials-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    grid-template-columns: none;
+    gap: 1.5rem;
+    padding: 1rem 0 2rem;
   }
   
   .testimonial-card {
+    min-width: 85vw;
+    scroll-snap-align: center;
     padding: 1.5rem;
+    flex-shrink: 0;
   }
 }
 
