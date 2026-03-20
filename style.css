@@ -481,6 +481,150 @@ footer {
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
+/* ===== TESTIMONIALS SECTION ===== */
+.testimonials-section {
+  padding: 4rem 0 6rem;
+  background-color: var(--white);
+}
+
+.testimonials-header {
+  margin-bottom: 3rem;
+}
+
+.testimonials-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+
+.google-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.google-icon-header {
+  height: 24px;
+  width: auto;
+}
+
+.rating-value {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--dark);
+}
+
+.stars {
+  color: #f4b400; /* Google Star Color */
+  display: flex;
+  gap: 2px;
+}
+
+.reviews-count {
+  color: #5f6368;
+  font-size: 1rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f1f3f4;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.testimonial-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: white;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.avatar-green { background-color: #34a853; }
+.avatar-purple { background-color: #7b1fa2; }
+.avatar-red { background-color: #ea4335; }
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: 700;
+  color: var(--dark);
+  font-size: 1.1rem;
+}
+
+.user-meta {
+  font-size: 0.85rem;
+  color: #70757a;
+}
+
+.testimonial-google-icon {
+  color: #4285f4;
+  font-size: 1.25rem;
+}
+
+.testimonial-stars {
+  color: #f4b400;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.testimonial-text {
+  font-style: italic;
+  color: var(--slate);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .testimonials-header h2 {
+    font-size: 2rem;
+  }
+  
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+}
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
