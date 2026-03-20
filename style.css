@@ -611,6 +611,11 @@ footer {
   font-size: 1rem;
 }
 
+/* Testimonial Nav Base Styles (Hidden on Desktop) */
+.testimonial-dots {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .testimonials-header h2 {
     font-size: 2rem;
@@ -647,9 +652,9 @@ footer {
     padding: 2.5rem 2rem;
     background: white;
     border-radius: 20px;
-    box-shadow: none; /* Shadow removed to prevent page clipping */
+    box-shadow: none;
     border: none;
-    border-bottom: 2px solid #f1f3f4; /* Bottom border instead of full border for mobile */
+    border-bottom: 2px solid #f1f3f4;
   }
 
   .testimonials-header h2 {
@@ -664,21 +669,21 @@ footer {
   .testimonial-dots {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin-top: 1.5rem;
+    gap: 12px;
+    margin: 1.5rem 0;
   }
 
   .dot {
     width: 10px;
     height: 10px;
-    background-color: var(--border-color);
+    background-color: #d1d5db;
     border-radius: 50%;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dot.active {
     background-color: var(--primary);
-    transform: scale(1.2);
+    transform: scale(1.3);
   }
 
   .testimonial-text {
@@ -688,10 +693,6 @@ footer {
   }
 }
 
-/* Desktop Dots (Hidden) */
-.testimonial-dots {
-  display: none;
-}
 
 .services-grid {
   display: grid;
