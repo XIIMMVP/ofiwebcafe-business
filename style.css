@@ -22,12 +22,12 @@ body {
   color: var(--slate);
   line-height: 1.6;
   -webkit-tap-highlight-color: transparent;
-  opacity: 0;
-  transition: opacity 0.8s ease;
+  animation: pageTransitionIn 0.8s ease forwards;
 }
 
-body.page-loaded {
-  opacity: 1;
+@keyframes pageTransitionIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* ===== ANIMATION SYSTEM ===== */
