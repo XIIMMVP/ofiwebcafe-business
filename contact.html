@@ -11,11 +11,8 @@
     <title>OfiwebCafe Business</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
     <meta name="description" content="Contacta a Ofiwebcafe Business, encuentra nuestra ubicación, WhatsApp o correo.">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Security & SEO -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn-cookieyes.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://*.google.com https://*.gstatic.com; connect-src 'self' https://cdn-cookieyes.com; frame-src 'self' https://www.google.com;">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -49,7 +46,7 @@
             <div class="menu-toggle" id="mobile-menu-btn">
                 <i class="fa-solid fa-bars"></i>
             </div>
-            <a href="https://wa.me/584129479152" target="_blank" class="btn">
+            <a href="https://wa.me/584129479152" target="_blank" rel="noopener noreferrer" class="btn">
                 <i class="fa-brands fa-whatsapp"></i> Escríbenos
             </a>
         </div>
@@ -123,7 +120,7 @@
                     style="font-size: 1.1rem; font-weight: 600; color: var(--dark); margin-bottom: 1rem; margin-top: 3rem; text-align: center;">
                     SÍGUENOS EN INSTAGRAM</h3>
                 <div style="display: flex; gap: 1rem; justify-content: center;">
-                    <a href="https://www.instagram.com/ofi.webcafebusiness/" target="_blank"
+                    <a href="https://www.instagram.com/ofi.webcafebusiness/" target="_blank" rel="noopener noreferrer"
                         style="background: white; color: var(--dark); padding: 0.75rem 1.5rem; border-radius: 999px; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid var(--border-color);">
                         <i class="fa-brands fa-instagram" style="color: #E1306C; font-size: 1.2rem;"></i> Instagram
                     </a>
@@ -151,7 +148,7 @@
                 <div class="footer-col">
                     <div class="logo mb-4">
                         <div class="logo-icon"><img src="images/logo_brand.jpg" alt="Ofiwebcafe Logo"></div>
-                        <div class="logo-text" style="">Ofiweb<span class="color-cafe">Café</span> <span
+                        <div class="logo-text">Ofiweb<span class="color-cafe">Café</span> <span
                                 class="color-business">Business</span></div>
                     </div>
                     <p style="font-size: 0.95rem; color: #9ca3af; line-height: 1.6;">Tu aliado estratégico en
@@ -167,7 +164,7 @@
                 </div>
                 <div class="footer-col">
                     <h3>Contacto Directo</h3>
-                    <p><a href="https://wa.me/584129479152" target="_blank"><i class="fa-brands fa-whatsapp"
+                    <p><a href="https://wa.me/584129479152" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"
                                 style="margin-right: 8px;"></i> 0412-9479152</a></p>
                     <p><a href="mailto:ofi.web.cafe512@gmail.com"><i class="fa-regular fa-envelope"
                                 style="margin-right: 8px;"></i> ofi.web.cafe512@gmail.com</a></p>
@@ -176,7 +173,7 @@
                     <h3>Síguenos</h3>
                     <p>Mantente al tanto de nuestros nuevos servicios u ofertas.</p>
                     <div class="social-links mt-8">
-                        <a href="https://www.instagram.com/ofi.webcafebusiness/" target="_blank"><i
+                        <a href="https://www.instagram.com/ofi.webcafebusiness/" target="_blank" rel="noopener noreferrer"><i
                                 class="fa-brands fa-instagram"></i></a>
                     </div>
                 </div>
@@ -192,90 +189,7 @@
         </svg>
         <i class="fa-solid fa-chevron-up"></i>
     </a>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const backToTopButton = document.getElementById("backToTop");
-            if (backToTopButton) {
-                const circle = backToTopButton.querySelector(".progress-ring__circle");
-                const radius = circle.r.baseVal.value;
-                const circumference = radius * 2 * Math.PI;
-
-                circle.style.strokeDasharray = `${circumference} ${circumference}`;
-                circle.style.strokeDashoffset = `${circumference}`;
-
-                function setProgress(percent) {
-                    const offset = circumference - (percent / 100) * circumference;
-                    circle.style.strokeDashoffset = offset;
-                }
-
-                // Mobile Menu Logic
-                const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-                const navLinks = document.getElementById("nav-links");
-                let scrollPos = 0;
-
-                function openMenu() {
-                    scrollPos = window.scrollY;
-                    navLinks.classList.add("mobile-active");
-                    document.body.classList.add("menu-open");
-                    document.body.style.top = `-${scrollPos}px`;
-                    mobileMenuBtn.querySelector("i").classList.replace("fa-bars", "fa-xmark");
-                }
-
-                function closeMenu() {
-                    navLinks.classList.remove("mobile-active");
-                    document.body.classList.remove("menu-open");
-                    document.body.style.top = '';
-                    window.scrollTo(0, scrollPos);
-                    mobileMenuBtn.querySelector("i").classList.replace("fa-xmark", "fa-bars");
-                }
-
-                if (mobileMenuBtn && navLinks) {
-                    mobileMenuBtn.addEventListener("click", () => {
-                        if (navLinks.classList.contains("mobile-active")) {
-                            closeMenu();
-                        } else {
-                            openMenu();
-                        }
-                    });
-
-                    navLinks.querySelectorAll("a:not(.mobile-menu-cta):not(.mobile-menu-socials a)").forEach(link => {
-                        link.addEventListener("click", () => closeMenu());
-                    });
-                }
-
-                window.addEventListener("scroll", () => {
-                    const scrollY = window.scrollY;
-                    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-                    let scrollPercent = 0;
-                    if (docHeight > 0) {
-                        scrollPercent = (scrollY / docHeight) * 100;
-                    }
-                    setProgress(scrollPercent);
-
-                    if (scrollY > 300) {
-                        backToTopButton.classList.add("show");
-                    } else {
-                        backToTopButton.classList.remove("show");
-                    }
-                });
-
-                backToTopButton.addEventListener("click", (e) => {
-                    e.preventDefault();
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                });
-                // Scroll Reveal Animations
-                const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
-                const revealObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('visible');
-                        }
-                    });
-                }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-                revealElements.forEach(el => revealObserver.observe(el));
-            }
-        });
-    </script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
