@@ -1115,20 +1115,18 @@ html {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  width: 50px;
-  height: 50px;
+  width: 46px;
+  height: 46px;
   background-color: white;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 2px solid var(--primary);
+  border: 1px solid #e5e7eb;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--primary);
   text-decoration: none;
-  font-size: 1.1rem;
-  box-shadow: 0 4px 20px rgba(37, 175, 244, 0.2);
+  font-size: 0.95rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1000;
   opacity: 0;
@@ -1143,20 +1141,19 @@ html {
 }
 
 .back-to-top:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
   background-color: var(--primary);
   color: white;
-  box-shadow: 0 8px 25px rgba(37, 175, 244, 0.35);
+  border-color: var(--primary);
+  box-shadow: 0 6px 20px rgba(37, 175, 244, 0.3);
 }
 
 .back-to-top .progress-ring {
   position: absolute;
-  top: -1px;
-  /* Align with border-box parent's edge */
-  left: -1px;
-  /* Align with border-box parent's edge */
-  width: 50px;
-  height: 50px;
+  top: -3px;
+  left: -3px;
+  width: 52px;
+  height: 52px;
   transform: rotate(-90deg);
   pointer-events: none;
 }
