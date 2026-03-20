@@ -1117,18 +1117,18 @@ html {
   right: 2rem;
   width: 50px;
   height: 50px;
-  background-color: rgba(17, 24, 39, 0.8);
+  background-color: white;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--primary);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--primary);
   text-decoration: none;
   font-size: 1.1rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(37, 175, 244, 0.2);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1000;
   opacity: 0;
@@ -1144,8 +1144,9 @@ html {
 
 .back-to-top:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-  color: var(--secondary);
+  background-color: var(--primary);
+  color: white;
+  box-shadow: 0 8px 25px rgba(37, 175, 244, 0.35);
 }
 
 .back-to-top .progress-ring {
