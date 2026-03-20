@@ -619,8 +619,8 @@ footer {
   .testimonials-slider-container {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    margin: 0 calc(var(--container-padding, 1rem) * -1);
-    padding: 0 1rem;
+    margin: 0 -2rem;
+    padding: 0 2rem;
     -ms-overflow-style: none; /* Hide scrollbar IE/Edge */
     scrollbar-width: none; /* Hide scrollbar Firefox */
   }
