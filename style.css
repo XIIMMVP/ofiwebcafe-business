@@ -619,11 +619,12 @@ footer {
   .testimonials-slider-container {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    padding: 1rem 2rem 2rem;
-    margin: 0 -2rem;
+    margin: 0;
+    padding: 0;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    width: 100%;
   }
 
   .testimonials-slider-container::-webkit-scrollbar {
@@ -633,29 +634,37 @@ footer {
   .testimonials-grid {
     display: flex;
     flex-wrap: nowrap;
-    gap: 1.5rem;
-    width: max-content; /* Ensure the grid expands based on its horizontal children */
+    width: 100%;
+    margin: 0;
+    gap: 0;
   }
   
   .testimonial-card {
-    min-width: 82vw;
-    width: 82vw;
+    min-width: 100%;
+    width: 100%;
     flex-shrink: 0;
     scroll-snap-align: center;
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 2rem;
     background: white;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Stronger shadow to be visible */
-    border: 1px solid #f0f0f0;
+    border-radius: 20px;
+    box-shadow: none; /* Shadow removed to prevent page clipping */
+    border: none;
+    border-bottom: 2px solid #f1f3f4; /* Bottom border instead of full border for mobile */
+  }
+
+  .testimonials-header h2 {
+    font-size: 2.25rem;
+  }
+
+  .testimonials-section {
+    overflow: hidden;
+    padding-bottom: 4rem;
   }
   
   .testimonial-text {
-    font-size: 0.95rem; /* Slightly smaller for mobile */
-    white-space: normal !important; /* Force wrapping */
-    word-break: break-word;
-    display: block;
-    width: 100%;
-    line-height: 1.5;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-top: 1rem;
   }
 }
 
