@@ -658,14 +658,39 @@ footer {
 
   .testimonials-section {
     overflow: hidden;
-    padding-bottom: 4rem;
+    padding-bottom: 5rem;
   }
   
+  .testimonial-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 1.5rem;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    background-color: var(--border-color);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  .dot.active {
+    background-color: var(--primary);
+    transform: scale(1.2);
+  }
+
   .testimonial-text {
     font-size: 1.1rem;
     line-height: 1.6;
     margin-top: 1rem;
   }
+}
+
+/* Desktop Dots (Hidden) */
+.testimonial-dots {
+  display: none;
 }
 
 .services-grid {
